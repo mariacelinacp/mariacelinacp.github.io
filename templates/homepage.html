@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Celina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border-bottom: 2px solid #2c3e50;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .section-buttons {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        .section-buttons button {
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .section-buttons button:hover {
+            background-color: #2980b9;
+        }
+        .sections {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .section-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ecf0f1;
+        }
+        .section-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Maria Celina Costa Pereira</h1>
+        <p>[Sua Profissão]</p>
+    </header>
+
+    <div class="container">
+        <div class="section-buttons">
+            <button onclick="toggleSection('contact-info')">Contato</button>
+            <button onclick="toggleSection('experience')">Experiência Profissional</button>
+            <button onclick="toggleSection('education')">Formação</button>
+            <button onclick="toggleSection('skills')">Habilidades</button>
+        </div>
+
+    <div class="sections">
+            <div id="contact-info" class="section-content">
+                <h2>Informações de Contato</h2>
+                <p>Email: mariacelinacpereira@gmail.com</p>
+                <p>Telefone: +55 (48) 9 96314054</p>
+                <p>Florianópolis, Santa Catarina - Brasil</p>
+            </div>
+
+            <div id="experience" class="section-content">
+                <h2>Experiência Profissional</h2>
+                <h3>[Cargo] - [Nome da Empresa]</h3>
+                <p>[Descrição das Responsabilidades e Conquistas]</p>
+                <h3>[Cargo] - [Nome da Empresa]</h3>
+                <p>[Descrição das Responsabilidades e Conquistas]</p>
+            </div>
+
+            <div id="education" class="section-content">
+                <h2>Formação</h2>
+                <h3>Engenheira Agrônoma - Universidade Federal de Santa Catarina</h3>
+            </div>
+
+            <div id="skills" class="section-content">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>[Habilidade 1]</li>
+                    <li>[Habilidade 2]</li>
+                    <li>[Habilidade 3]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% block javascript %}
+  <script src="{{ url_for('static', filename='homepage.js') }}"></script>
+    {% endblock %}
+
+</body>
+</html>
